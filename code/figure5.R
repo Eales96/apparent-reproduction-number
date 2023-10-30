@@ -1,5 +1,7 @@
-setwd("C:/Users/EALESO/OneDrive - The University of Melbourne/Research Ideas/ApparentReproductionNumber")
-source('functions.R')
+setwd('./apparent-reproduction-number')
+source('code/functions.R')
+library(cowplot)
+library(ggplot2)
 
 sim_init <- data.frame(time = seq(-99,0),
                        Inc = rep(1,100),
@@ -193,7 +195,6 @@ plt23 <- plt2 +
 
 plt23
 
-library(cowplot)
 
 plt_grid <- plot_grid(plt1, plt23, nrow=1, rel_widths = c(2,1.2))
 
