@@ -39,7 +39,7 @@ gamma_conv <- function(tau_vals,shape, rate){
 # Gamma convolution function
 prev_conv <- function(ct_threshold){
 
-  ct_array<-readRDS("output/ct_array.rds")
+  ct_array<-readRDS("dat/ct_array.rds")
 
   ct_array<-ct_array<ct_threshold
   rowMeans(ct_array)
@@ -48,18 +48,9 @@ prev_conv <- function(ct_threshold){
 
 prev_conv_2 <- function(){
 
-  pos_array<-read.csv("pcr_pos_dat.csv")
+  pos_array<-read.csv("dat/pcr_pos_dat.csv")
   c(pos_array$y, rep(0,70))
 }
-
-
-prev_urt_conv <- function(){
-
-  conv<-readRDS('output/prev_urt_conv.rds')
-  conv
-
-}
-
 
 rep_test_conv <- function(ct_threshold, test_freq){
   prob_ls <- c()
