@@ -42,6 +42,6 @@ for(i in seq_len(length(t))){
 
 }
 
-saveRDS(ct_array, "output/ct_array.rds")
+saveRDS(ct_array, "dat/ct_array.rds")
 
 
