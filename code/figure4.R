@@ -1,5 +1,8 @@
-setwd("C:/Users/EALESO/OneDrive - The University of Melbourne/Research Ideas/ApparentReproductionNumber")
-source('functions.R')
+setwd('./apparent-reproduction-number')
+source('code/functions.R')
+library(cowplot)
+library(ggplot2)
+library(egg)
 
 sim_init <- data.frame(time = seq(-99,0),
                        Inc = rep(1,100),
@@ -229,9 +232,6 @@ plt5<-ggplot(df_power)+
   labs(tag="D")
 
 
-
-library(egg)
-
 plt34 <- plt3 +
   annotation_custom(
     ggplotGrob(plt4),
@@ -241,7 +241,6 @@ plt34 <- plt3 +
 
 plt34
 
-library(cowplot)
 plt_gridab <- plot_grid(plt1, plt2, nrow = 2)
 
 plt_grid <- plot_grid(plt_gridab, plt34,plt5, nrow=1, rel_widths = c(1.5,1.5,1))
