@@ -1,6 +1,5 @@
 library(rstan)
-ct_fit<-readRDS("output/ct_fit.rds")
-
+ct_fit<-readRDS("dat/ct_fit.rds")
 
 ff<-rstan::extract(ct_fit)
 
