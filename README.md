@@ -3,12 +3,13 @@ This repository contains the code to recreate the analysis in the pre-print [Dif
 
 ## Code
 The 'code' sub-directory contains the code required to run the analysis.
-As the names suggest:
-1. `code/figure1.R` produces Figure 1
-2. `code/figure2.R` produces Figure 2
-3. `code/figure3.R` produces Figure 3
-4. `code/figure4.R` produces Figure 4
-5. `code/figure5.R` produces Figure 5
+There are 6 scripts that produce the 6 figures in the paper:
+1. `code/figure1.R` 
+2. `code/figure2.R` 
+3. `code/figure3.R` 
+4. `code/figure4.R` 
+5. `code/figure5.R`
+6. `code/figure6.R` 
 
 All figure scripts depend on the functions in the script 'code/functions.R'
 
