@@ -53,8 +53,9 @@ P_tau <- function(tau, beta1, beta2, beta3, C){
 }
 
 prev_conv_2 <- function(){
-  c(P_tau(tau, beta1=1.51, beta2=2.19, beta3 = -1.1, C=3.18), rep(0,70))
+  c(P_tau(tau, beta1=1.51, beta2=2.19, beta3 = -1.1, C=3.18)/sum(P_tau(tau, beta1=1.51, beta2=2.19, beta3 = -1.1, C=3.18)), rep(0,70))
 }
+
 
 
 rep_test_conv <- function(ct_threshold, test_freq){
