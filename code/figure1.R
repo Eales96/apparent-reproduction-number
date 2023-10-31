@@ -23,8 +23,8 @@ sim_res2 <- run_sim(sim_init, R_values_sine, n, b)
 
 
 # First values
-mean <- 10
-sd <- 2
+mean <- 12
+sd <- 3
 
 conv_param1 <- mean**2/sd**2
 conv_param2 <- 1/(sd**2/mean)
@@ -34,21 +34,21 @@ ieff2 <- estimate_Ieff(sim_res2, conv_function = "gamma", conv_param1 = conv_par
 rapp1_sq <- estimate_Rapp(ieff1, n, b)
 rapp1_sin <- estimate_Rapp(ieff2, n, b)
 
-rapp1_sq$mean <- "10 days"
-rapp1_sq$sd <- "2 days"
-rapp1_sin$mean <- "10 days"
-rapp1_sin$sd <- "2 days"
+rapp1_sq$mean <- "12 days"
+rapp1_sq$sd <- "3 days"
+rapp1_sin$mean <- "12 days"
+rapp1_sin$sd <- "3 days"
 
 
 conv1 <- data.frame(time=seq(0,100),
                     prob = dgamma(seq(0,100),conv_param1, conv_param2),
-                    mean = "10 days",
-                    sd = "2 days")
+                    mean = "12 days",
+                    sd = "3 days")
 
 
 # Second values
-mean <- 5
-sd <- 2
+mean <- 6
+sd <- 3
 
 conv_param1 <- mean**2/sd**2
 conv_param2 <- 1/(sd**2/mean)
@@ -58,19 +58,19 @@ ieff2 <- estimate_Ieff(sim_res2, conv_function = "gamma", conv_param1 = conv_par
 rapp2_sq <- estimate_Rapp(ieff1, n, b)
 rapp2_sin <- estimate_Rapp(ieff2, n, b)
 
-rapp2_sq$mean <- "5 days"
-rapp2_sq$sd <- "2 days"
-rapp2_sin$mean <- "5 days"
-rapp2_sin$sd <- "2 days"
+rapp2_sq$mean <- "06 days"
+rapp2_sq$sd <- "3 days"
+rapp2_sin$mean <- "06 days"
+rapp2_sin$sd <- "3 days"
 
 
 conv2 <- data.frame(time=seq(0,100),
                     prob = dgamma(seq(0,100),conv_param1, conv_param2),
-                    mean = "5 days",
-                    sd = "2 days")
+                    mean = "06 days",
+                    sd = "3 days")
 # Third values
-mean <- 15
-sd <- 2
+mean <- 18
+sd <- 3
 
 conv_param1 <- mean**2/sd**2
 conv_param2 <- 1/(sd**2/mean)
@@ -80,20 +80,20 @@ ieff2 <- estimate_Ieff(sim_res2, conv_function = "gamma", conv_param1 = conv_par
 rapp3_sq <- estimate_Rapp(ieff1, n, b)
 rapp3_sin <- estimate_Rapp(ieff2, n, b)
 
-rapp3_sq$mean <- "15 days"
-rapp3_sq$sd <- "2 days"
-rapp3_sin$mean <- "15 days"
-rapp3_sin$sd <- "2 days"
+rapp3_sq$mean <- "18 days"
+rapp3_sq$sd <- "3 days"
+rapp3_sin$mean <- "18 days"
+rapp3_sin$sd <- "3 days"
 
 conv3 <- data.frame(time=seq(0,100),
                     prob = dgamma(seq(0,100),conv_param1, conv_param2),
-                    mean = "15 days",
-                    sd = "2 days")
+                    mean = "18 days",
+                    sd = "3 days")
 
 
 # Fourth values
-mean <- 10
-sd <- 4
+mean <- 12
+sd <- 6
 
 conv_param1 <- mean**2/sd**2
 conv_param2 <- 1/(sd**2/mean)
@@ -103,20 +103,20 @@ ieff2 <- estimate_Ieff(sim_res2, conv_function = "gamma", conv_param1 = conv_par
 rapp4_sq <- estimate_Rapp(ieff1, n, b)
 rapp4_sin <- estimate_Rapp(ieff2, n, b)
 
-rapp4_sq$mean <- "10 days"
-rapp4_sq$sd <- "4 days"
-rapp4_sin$mean <- "10 days"
-rapp4_sin$sd <- "4 days"
+rapp4_sq$mean <- "12 days"
+rapp4_sq$sd <- "6 days"
+rapp4_sin$mean <- "12 days"
+rapp4_sin$sd <- "6 days"
 
 conv4 <- data.frame(time=seq(0,100),
                     prob = dgamma(seq(0,100),conv_param1, conv_param2),
-                    mean = "10 days",
-                    sd = "4 days")
+                    mean = "12 days",
+                    sd = "6 days")
 
 
 # Fifth values
-mean <- 10
-sd <- 6
+mean <- 12
+sd <- 9
 
 conv_param1 <- mean**2/sd**2
 conv_param2 <- 1/(sd**2/mean)
@@ -126,15 +126,15 @@ ieff2 <- estimate_Ieff(sim_res2, conv_function = "gamma", conv_param1 = conv_par
 rapp5_sq <- estimate_Rapp(ieff1, n, b)
 rapp5_sin <- estimate_Rapp(ieff2, n, b)
 
-rapp5_sq$mean <- "10 days"
-rapp5_sq$sd <- "6 days"
-rapp5_sin$mean <- "10 days"
-rapp5_sin$sd <- "6 days"
+rapp5_sq$mean <- "12 days"
+rapp5_sq$sd <- "9 days"
+rapp5_sin$mean <- "12 days"
+rapp5_sin$sd <- "9 days"
 
 conv5 <- data.frame(time=seq(0,100),
                     prob = dgamma(seq(0,100),conv_param1, conv_param2),
-                    mean = "10 days",
-                    sd = "6 days")
+                    mean = "12 days",
+                    sd = "9 days")
 
 
 
@@ -146,10 +146,10 @@ df_square <- rbind(rapp1_sq,
                    rapp5_sq)
 
 df_sine <- rbind(rapp1_sin,
-                   rapp2_sin,
-                   rapp3_sin,
-                   rapp4_sin,
-                   rapp5_sin)
+                 rapp2_sin,
+                 rapp3_sin,
+                 rapp4_sin,
+                 rapp5_sin)
 
 df_conv <- rbind(conv1,
                  conv2,
@@ -157,8 +157,9 @@ df_conv <- rbind(conv1,
                  conv4,
                  conv5)
 
+
 plt1 <- ggplot(df_square)+
-  geom_line(data=df_square[df_square$mean=="5 days",], aes(x=time, y=Rt),color='black', size=1)+
+  geom_line(data=df_square[df_square$mean=="12 days",], aes(x=time, y=Rt),color='black', size=1)+
   geom_line(aes(x=time, y=Rapp, color = interaction(mean,sd), linetype= interaction(mean,sd)), size=1)+
   coord_cartesian(xlim = c(-5,95))+
   theme_bw()+
@@ -174,7 +175,7 @@ plt1 <- ggplot(df_square)+
 
 
 plt2 <- ggplot(df_sine)+
-  geom_line(data=df_sine[df_sine$mean=="5 days",], aes(x=time, y=Rt),color='black', size=1)+
+  geom_line(data=df_sine[df_sine$mean=="12 days",], aes(x=time, y=Rt),color='black', size=1)+
   geom_line(aes(x=time, y=Rapp, color = interaction(mean,sd),  linetype = interaction(mean,sd)), size=1)+
   coord_cartesian(xlim = c(-5,95))+
   theme_bw()+
@@ -197,9 +198,6 @@ plt3 <- ggplot(df_conv)+
   coord_cartesian(xlim=c(0,25))+
   theme(legend.position = "none")+
   labs(tag="C")
-
-
-
 
 plt_grid <- plot_grid(plt1, plt2, plt3, nrow = 3)
 
