@@ -46,11 +46,16 @@ prev_conv <- function(ct_threshold){
 }
 
 
-prev_conv_2 <- function(){
-
-  pos_array<-read.csv("dat/pcr_pos_dat.csv")
-  c(pos_array$y, rep(0,70))
+P_tau <- function(tau, beta1, beta2, beta3, C){
+  x = tau - C
+  val = beta1 + x*beta2 +x*beta2*beta3*(x>0)
+  exp(val)/(1+exp(val))
 }
+
+prev_conv_2 <- function(){
+  c(P_tau(tau, beta1=1.51, beta2=2.19, beta3 = -1.1, C=3.18), rep(0,70))
+}
+
 
 rep_test_conv <- function(ct_threshold, test_freq){
   prob_ls <- c()
